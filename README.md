@@ -9,8 +9,11 @@ What you get:
 - Commands in your 12864-controller to turn the fan on/off or adjust in 10%-steps
 - a Macro to turn the fan off some time after the print.
 
-Slicer integration: Add "SET_FAN_SPEED FAN=Nevermore SPEED=1" in your start-macro
+Slicer integration: 
+
+1. Add "SET_FAN_SPEED FAN=Nevermore SPEED=1" in your start-macro
 (or less fan depending on your needs, like SPEED=0.8)
-in your end print code, add "UPDATE_DELAYED_GCODE ID=filter_off DURATION=180"
+2. In your end print code, add "UPDATE_DELAYED_GCODE ID=filter_off DURATION=180"
 this keeps your Nevermore running for 180s after the print finishes to clean the 
 chamber a bit more.
+3. (alternative) If you have a print_end macro, you should add "UPDATE_DELAYED_GCODE ID=filter_off DURATION=180"
